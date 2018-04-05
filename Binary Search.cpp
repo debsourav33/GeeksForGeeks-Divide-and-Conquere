@@ -5,10 +5,12 @@ int bin_search(int a[], int x, int low, int high){
 
     int mid= (high+low)/2;
 
-    if(x==a[mid]){
-        cout<< "Mid found: "<< mid <<endl;
+    if(x==a[mid])
         return mid;
-    }
+
+    if(low>high)
+        return -1;
+
 
     if(x>a[mid])
         return bin_search(a,x,mid+1,high);
